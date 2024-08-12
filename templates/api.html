@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ công cụ chuyển đổi & Tool API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            overflow: hidden;
+            background-color: white;
+            padding: 10px 20px;
+            justify-content: flex-end;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header img {
+            float: left;
+            margin: 0 10px;
+            width: 120px;
+            height: 50px;
+        }
+        .header nav a {
+            display:block;
+            float: left;
+            margin: 5px 10px ;
+            
+            color: #666;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+        }
+        .header nav a:hover {
+            font-weight: bold;
+            border-bottom: 2px solid black;
+        }
+
+        .header nav a.login{
+            float:right;
+            outline: none;
+        }
+        .container {
+            width: 95%;
+            margin: 20px auto;
+        }
+        .container h1 {
+            margin-top: 60px;
+            
+        }
+        .container p {
+           
+            margin-bottom: 50px;
+        }
+        .tool-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .tool {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .tool button {
+            background-color: white;
+            color: black;
+            font-size: 13px;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            align-self: flex-start;
+        }
+        .tool button:hover {
+            background-color: #f0f0f0;
+        }
+        .tool img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .tool h3 {
+            color: #333;
+            margin: 0 0 10px;
+            display: flex;
+            align-items: center;
+        }
+        .tool p {
+            color: #666;
+            margin: 0 0 40px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 30px;
+            color: #666;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+        .footer-2nd {
+            text-align: right;
+            font-size: 0.9em;
+            margin: 20px 0;
+        }
+        .footer-2nd img {
+            float:left;
+            height: 60px;
+        }
+        @media (max-width: 768px) {
+            .header nav a {
+                margin: 0 5px;
+                padding: 5px;
+            }
+            .tool p {
+                margin: 0 0 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .tool-row {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt=" ">
+        <nav>
+            <a href="chuyendoi.html#instructions">Hướng dẫn sử dụng</a>
+            <a href="api.html">Công cụ & API</a>
+            <a href="chuyendoi.html">Chuyển đổi</a>
+            <a href="login.html" class="login">Đăng nhập</a>
+        </nav>
+    </div>
+    <div class="container">
+        <h1>Bộ công cụ chuyển đổi & Tool API</h1>
+        <p>Bạn muốn mua và tải các tool API chuyển đổi bao gồm các tệp JPG sang PDF, PDF sang JPG ...</p>
+        <div class="tool-row">
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='5.jpg') }}" alt=" ">PDF sang Word</h3>
+                <p>Chuyển đổi PDF thành tệp Microsoft Word</p>
+                <button>Dùng thử ngay</button>
+            </div>
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='6.jpg') }}" alt=" ">PDF sang Excel</h3>
+                <p>Chuyển đổi PDF thành tệp Microsoft Excel</p>
+                <button>Dùng thử ngay</button>
+            </div>
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='7.jpg') }}" alt=" ">PDF sang PPT</h3>
+                <p>Chuyển đổi PDF thành tệp Microsoft PowerPoint</p>
+                <button>Dùng thử ngay</button>
+            </div>
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='8.jpg') }}" alt=" ">PDF sang JPG</h3>
+                <p>Chuyển đổi PDF sang JPG hoặc định dạng hình ảnh khác</p>
+                <button>Dùng thử ngay</button>
+            </div>
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='5.jpg') }}" alt=" ">Word sang PDF</h3>
+                <p>Chuyển đổi tệp Microsoft Word thành PDF </p>
+                <button>Dùng thử ngay</button>
+            </div>
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='6.jpg') }}" alt=" ">Excel sang PDF</h3>
+                <p>Chuyển đổi tệp Microsoft Excel sang PDF</p>
+                <button>Dùng thử ngay</button>
+            </div>
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='7.jpg') }}" alt=" ">PPT sang PDF</h3>
+                <p>Chuyển đổi tệp Microsoft PowerPoint sang PDF</p>
+                <button>Dùng thử ngay</button>
+            </div>
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='14.jpg') }}" alt=" ">JPG sang PDF</h3>
+                <p>Chuyển đổi JPG hoặc tệp hình ảnh khác sang PDF</p>
+                <button>Dùng thử ngay</button>
+            </div>
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='9.jpg') }}" alt=" ">PNG sang PDF</h3>
+                <p>Chuyển đổi PNG hoặc tệp hình ảnh khác sang PDF</p>
+                <button>Dùng thử ngay</button>
+            </div>
+            <div class="tool">
+                <h3><img src="{{ url_for('static', filename='10.jpg') }}" alt=" ">Công cụ chuyển đổi PDF</h3>
+                <p>Chuyển đổi tệp sang hoặc từ PDF</p>
+                <button>Dùng thử ngay</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Đánh giá trải nghiệm của bạn: <span style="color: gold;">★★★★☆</span> 4.8 / 5 - 162700</p>
+    </div>
+    <div class="footer-2nd">
+        <img src="{{ url_for('static', filename='4.png') }}" alt="">
+        <p>Quyền riêng tư (Cập nhật) / Điều khoản sử dụng / </p>
+        <p>Tùy chọn cookie / Không bán thông tin cá nhân của tôi</p>
+    </div>
+</body>
+</html>
